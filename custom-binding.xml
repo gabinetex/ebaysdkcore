@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jaxws:bindings wsdlLocation="./src/main/resources/eBaySvc.wsdl"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jaxws="http://java.sun.com/xml/ns/jaxws"
+	jaxb:version="2.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb">
+	<jaxws:bindings
+		node="//xs:complexType[@name='ReviseInventoryStatusRequestType']">
+		<jaxws:bindings node=".//xs:any">
+			<jaxb:property name="reviseInventoryStatusRequestTypeAny" />
+		</jaxws:bindings>
+	</jaxws:bindings>
+</jaxws:bindings>

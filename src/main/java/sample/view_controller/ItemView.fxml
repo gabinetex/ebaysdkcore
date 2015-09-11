@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.view_controller.ItemViewController">
+   <children>
+      <VBox layoutX="1.0" layoutY="1.0" spacing="17.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+         <children>
+            <HBox>
+               <children>
+                  <VBox spacing="5.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0" VBox.vgrow="NEVER">
+                     <children>
+                        <HBox alignment="BOTTOM_LEFT">
+                           <children>
+                              <Label prefHeight="20.0" prefWidth="64.0" text="Title">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="titleTxtField" prefHeight="25.0" prefWidth="559.0" HBox.hgrow="ALWAYS" />
+                              <Separator orientation="VERTICAL" prefHeight="29.0" prefWidth="24.0" />
+                              <Label layoutX="187.0" layoutY="14.0" text="Price" />
+                              <TextField fx:id="priceTxtField" layoutX="215.0" layoutY="10.0" prefHeight="25.0" prefWidth="56.0" />
+                              <Separator layoutX="833.0" layoutY="10.0" orientation="VERTICAL" prefHeight="29.0" prefWidth="24.0" />
+                              <Label layoutX="364.0" layoutY="14.0" text="Weight" />
+                              <TextField fx:id="weightTxtField" layoutX="541.0" layoutY="10.0" prefHeight="25.0" prefWidth="52.0" />
+                              <Separator layoutX="192.0" layoutY="10.0" orientation="VERTICAL" prefHeight="29.0" prefWidth="54.0" />
+                              <RadioButton fx:id="newConditionButton" mnemonicParsing="false" prefHeight="17.0" text="New...">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="conditionToggleGroup" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="usedConditonButton" mnemonicParsing="false" selected="true" text="Used." toggleGroup="$conditionToggleGroup" />
+                              <Separator orientation="VERTICAL" prefHeight="29.0" prefWidth="54.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="BOTTOM_LEFT" layoutX="969.0" minWidth="960.0" spacing="14.0">
+                           <children>
+                              <Label layoutY="16.0" text="Subtitle">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="subtitleTxtField" layoutX="41.0" layoutY="12.0" prefHeight="25.0" HBox.hgrow="ALWAYS" />
+                              <Button fx:id="previousButton" mnemonicParsing="false" onAction="#handlePrevious" text="Previous" />
+                              <Button fx:id="nextButton" mnemonicParsing="false" onAction="#handleNext" text="Next..." />
+                              <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#handleDelete" text="Delete" />
+                              <Button mnemonicParsing="false" onAction="#hangleNew" text="New" />
+                              <Button mnemonicParsing="false" onAction="#handleAddCategory" text="Add Category" />
+                              <ChoiceBox fx:id="categoryChoiceBox" prefWidth="150.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="74.0" prefWidth="207.0" spacing="4.0">
+                     <children>
+                        <RadioButton fx:id="collectButton" mnemonicParsing="false" text="Collect in Person" />
+                        <RadioButton fx:id="shipItButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Ship it" />
+                        <Separator prefHeight="7.0" prefWidth="111.0" />
+                        <HBox spacing="8.0">
+                           <children>
+                              <ToggleButton fx:id="dontUpladYetButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" selected="true" text="Dont Uplad Yet" />
+                              <Label fx:id="uploadedLabel" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets left="22.0" right="5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+            <SplitPane dividerPositions="0.6039">
+               <items>
+                  <AnchorPane prefHeight="500.0">
+                     <children>
+                        <VBox>
+                           <children>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox>
+                                       <children>
+                                          <ImageView fx:id="pic_1" fitHeight="200.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS" />
+                                          <TextField fx:id="pic1Comments" />
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="10.0" layoutY="10.0">
+                                       <children>
+                                          <ImageView fx:id="pic_2" fitHeight="200.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS" />
+                                          <TextField fx:id="pic2Comments" />
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="277.0" layoutY="10.0">
+                                       <children>
+                                          <ImageView fx:id="pic_3" fitHeight="200.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS" />
+                                          <TextField fx:id="pic3Comments" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox>
+                                       <children>
+                                          <ImageView fx:id="pic_4" fitHeight="200.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS" />
+                                          <TextField fx:id="pic4Comments" />
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="10.0" layoutY="10.0">
+                                       <children>
+                                          <ImageView fx:id="pic_5" fitHeight="200.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS" />
+                                          <TextField fx:id="pic5Comments" />
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="277.0" layoutY="10.0">
+                                       <children>
+                                          <ImageView fx:id="pic_6" fitHeight="200.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS" />
+                                          <TextField fx:id="pic6Comments" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane>
+                     <children>
+                        <VBox layoutX="89.0" layoutY="85.0" spacing="9.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+                           <children>
+                              <Label layoutX="139.0" layoutY="309.0" text="Description Header" />
+                              <TextArea fx:id="descriptionHeader" layoutX="89.0" layoutY="85.0" prefHeight="80.0" />
+                              <Label layoutX="149.0" layoutY="319.0" text="Main Description" />
+                              <TextArea fx:id="mainDescription" layoutX="99.0" layoutY="95.0" prefHeight="200.0" />
+                              <Label layoutX="10.0" layoutY="449.0" text="Description Ending" />
+                              <TextArea fx:id="descriptionBottom" layoutX="10.0" layoutY="105.0" prefHeight="50.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </items>
+            </SplitPane>
+            <ScrollPane hbarPolicy="ALWAYS" layoutX="51.0" layoutY="437.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefViewportWidth="1000.0" prefWidth="1062.0" vbarPolicy="NEVER" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" VBox.vgrow="SOMETIMES">
+               <content>
+                  <HBox fx:id="rawPicHBox" />
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

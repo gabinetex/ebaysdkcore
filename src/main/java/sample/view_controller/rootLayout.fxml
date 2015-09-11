@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="rootPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.view_controller.RootLayoutController">
+   <top>
+      <HBox>
+         <children>
+            <MenuBar BorderPane.alignment="CENTER" HBox.hgrow="ALWAYS">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#handleClose" text="Close" />
+                        <RadioMenuItem mnemonicParsing="false" onAction="#handleOpen" text="Open" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleMerge" text="Merge..." />
+                        <RadioMenuItem mnemonicParsing="false" onAction="#handleSave" text="Save" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleSaveAs" text="Save as..." />
+                        <MenuItem mnemonicParsing="false" onAction="#handleAddNewPictureFolder" text="Add new pictures folder" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="View">
+                     <items>
+                        <RadioMenuItem fx:id="itemView" mnemonicParsing="false" selected="true" text="itemView">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="viewToggleGroup" />
+                           </toggleGroup>
+                        </RadioMenuItem>
+                        <RadioMenuItem fx:id="tableView" mnemonicParsing="false" text="table view" toggleGroup="$viewToggleGroup" />
+                     </items>
+                  </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <HBox alignment="TOP_RIGHT" prefHeight="25.0" prefWidth="212.0" spacing="10.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#uploadItemstoEbay" text="Upload Items" />
+                  <Button mnemonicParsing="false" onAction="#handleDeleteAll" text="Button" />
+                  <VBox>
+                     <children>
+                        <Label prefHeight="0.0" prefWidth="27.0" text="Fees:">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="feesLabel" prefHeight="17.0" prefWidth="41.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </top>
+   <bottom>
+      <HBox prefHeight="3.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="17.0" prefWidth="139.0" text="CurrentItemTitle" />
+            <TextField fx:id="currentItemTextField" />
+            <Label fx:id="nOfItemsTextField" layoutX="10.0" layoutY="10.0" prefHeight="17.0" prefWidth="139.0" text="Index" />
+            <TextField fx:id="currentItemINDEXtextField" layoutX="105.0" layoutY="10.0" />
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
